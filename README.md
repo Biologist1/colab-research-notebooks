@@ -1,25 +1,34 @@
-# Colab Research Notebooks
+# Computer Vision Research for Microscopy
 
-This public repository is for **selected, reviewed Google Colab notebooks** belonging to [Dr. Gülsüm Meço](https://github.com/Biologist1). It supports a reproducible research portfolio in AI-supported education, computer vision, image segmentation and educational technology.
+**Dr. Gülsüm Meço** · Artificial Intelligence · Computer Vision · Microscopy · Educational Technology
 
-**Status:** Repository configured. Automated synchronization requires a one-time authorization in Google Apps Script and a repository-scoped GitHub token. No private research notebooks have been published as part of this setup.
+This repository presents selected research code on **microscopy image segmentation and prediction-derived morphometry**. The notebooks come from an experimental comparison involving **SegFormer-B0** and **U-Net with a ResNet34 encoder**, as well as downstream measurement of segmented biological structures.
 
-## Selective synchronization
+## Research notebooks
 
-- **Source:** your private Google Drive staging folder (`GitHub_Yayinlanacak_Notebooklar`), whose ID is stored only in your Apps Script Properties.
-- **Selection:** add **Drive shortcuts**, not copies or originals, for notebooks you explicitly choose to publish.
-- **Destination:** `notebooks/` in this repository.
-- **Cadence:** approximately every 15 minutes, after a one-time Apps Script trigger is installed.
-- **Sanitization:** notebook execution outputs and nonessential metadata are removed; basic secret patterns are checked before upload. **Automated checks cannot guarantee privacy or confidentiality.**
+| Research implementation | Notebook | Open in Colab |
+| --- | --- | --- |
+| **SegFormer-B0** — COCO polygon masks, semantic segmentation, training and validation | [SegFormer-B0-Microscopy-Segmentation.ipynb](research/SegFormer-B0-Microscopy-Segmentation.ipynb) | [Open](https://colab.research.google.com/github/Biologist1/colab-research-notebooks/blob/main/research/SegFormer-B0-Microscopy-Segmentation.ipynb) |
+| **U-Net–ResNet34** — semantic segmentation, training, validation and checkpoints | [UNet-ResNet34-Microscopy-Segmentation.ipynb](research/UNet-ResNet34-Microscopy-Segmentation.ipynb) | [Open](https://colab.research.google.com/github/Biologist1/colab-research-notebooks/blob/main/research/UNet-ResNet34-Microscopy-Segmentation.ipynb) |
+| **Microscopy Morphometry** — model predictions and quantitative morphology analysis | [Microscopy-Morphometry.ipynb](research/Microscopy-Morphometry.ipynb) | [Open](https://colab.research.google.com/github/Biologist1/colab-research-notebooks/blob/main/research/Microscopy-Morphometry.ipynb) |
 
-**Important:** Verify that a notebook is suitable for public distribution *before* adding its shortcut. GitHub history retains prior versions of published content. Removing a shortcut does not remove previously published versions.
+### Study scope
 
-## Finish setting up
+- **Specimens:** onion cells, seed tissue and stem tissue, using a COCO-annotated microscopy dataset.
+- **Segmentation methods:** transformer-based SegFormer-B0 and convolutional U-Net–ResNet34.
+- **Morphometric analysis:** measurements derived from predicted segmentation masks; analysis includes area, perimeter, equivalent diameter, aspect ratio, eccentricity, circularity, solidity and extent.
 
-See [KURULUM.md](KURULUM.md) and copy [colab_github_sync.gs](colab_github_sync.gs) into a Google Apps Script project.
+## Reproduction and data availability
 
-## Other profiles
+These notebooks are **research implementations**, not a complete public dataset release. Source image data, COCO annotations, checkpoints and model weights are not included.
 
-- [GitHub academic profile](https://github.com/Biologist1)
+The U-Net notebook expects masks prepared with the SegFormer data-preparation procedure. Notebook paths may need adjustment for an independent environment. Outputs were removed prior to publication; **the published versions have not been re-executed end to end**, so no benchmark or performance claims are made in this README.
+
+## Researcher profiles
+
+- [Academic GitHub profile](https://github.com/Biologist1)
 - [Kaggle](https://www.kaggle.com/glsmmeo)
+- [Meço Digital Academy](https://mecodijitalakademi.com/)
 
+---
+*Research code shared for scholarly inspection. Please cite the associated publication when available; data and model-weight redistribution rights are not granted by this repository.*
