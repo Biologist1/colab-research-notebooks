@@ -4,7 +4,6 @@
  * Never alters source notebooks. Automated secret checks are not exhaustive.
  */
 const SYNC_CONFIG = Object.freeze({
-  driveFolderId: '10VjsyjdPnKEdJYbntobmc75RCag6gFd9',
   githubOwner: 'Biologist1',
   githubRepository: 'colab-research-notebooks',
   githubBranch: 'main',
@@ -31,7 +30,9 @@ function syncSelectedNotebooks() {
     const props = PropertiesService.getScriptProperties();
     const token = props.getProperty('GITHUB_TOKEN');
     if (!token) throw new Error('Missing GITHUB_TOKEN in Script Properties');
-    const files = DriveApp.getFolderById(SYNC_CONFIG.driveFolderId).getFiles();
+    const folderId = props.getProperty('COLAB_SHORTCUT_FOLDER_ID');
+    if (!folderId) throw new Error('Missing COLAB_SHORTCUT_FOLDER_ID in Script Properties');
+    const files = DriveApp.getFolderById(folderId).getFiles();
     let uploaded = 0, unchanged = 0, ignored = 0, blocked = 0;
     while (files.hasNext()) {
       const shortcut = files.next();
