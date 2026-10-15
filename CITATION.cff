@@ -1,0 +1,6 @@
+cff-version: 1.2.0
+message: Please cite this repository when using its code.
+title: Microscopy Segmentation and Morphometry
+authors:
+  - family-names: Meço
+    given-names: Gülsüm
