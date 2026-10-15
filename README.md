@@ -6,7 +6,7 @@ This public repository is for **selected, reviewed Google Colab notebooks** belo
 
 ## Selective synchronization
 
-- **Source:** the private Google Drive folder [GitHub_Yayinlanacak_Notebooklar](https://drive.google.com/drive/folders/10VjsyjdPnKEdJYbntobmc75RCag6gFd9).
+- **Source:** your private Google Drive staging folder (`GitHub_Yayinlanacak_Notebooklar`), whose ID is stored only in your Apps Script Properties.
 - **Selection:** add **Drive shortcuts**, not copies or originals, for notebooks you explicitly choose to publish.
 - **Destination:** `notebooks/` in this repository.
 - **Cadence:** approximately every 15 minutes, after a one-time Apps Script trigger is installed.
