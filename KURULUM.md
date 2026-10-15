@@ -1,7 +1,7 @@
 # Colab → GitHub: Güvenli otomatik eşitleme kurulumu
 
 **GitHub:** [Biologist1/colab-research-notebooks](https://github.com/Biologist1/colab-research-notebooks) (herkese açık)  
-**Seçim klasörü:** [GitHub_Yayinlanacak_Notebooklar](https://drive.google.com/drive/folders/10VjsyjdPnKEdJYbntobmc75RCag6gFd9) (Google Drive, özel)  
+**Seçim klasörü:** `GitHub_Yayinlanacak_Notebooklar` (Google Drive, özel; klasör kimliği yalnızca Script Properties içine kaydedilir)  
 **Script:** [colab_github_sync.gs](colab_github_sync.gs)
 
 ## A. GitHub erişim anahtarını oluştur (tek seferlik)
@@ -21,13 +21,14 @@
 4. Kaydet.
 5. Solda **Project Settings / Proje Ayarları** (dişli) → **Script properties / Komut dosyası özellikleri** → **Add script property**.
 6. **Property / Özellik:** `GITHUB_TOKEN`; **Value / Değer:** GitHub'dan oluşturduğun token. Kaydet. Token'ı kodun içine ekleme.
-7. Üstteki fonksiyon menüsünden `syncSelectedNotebooks` seç ve **Run / Çalıştır** de. Google izin ekranı gelirse yalnızca bu projenin ihtiyaç duyduğu Drive, GitHub bağlantısı (dış istek) ve komut dosyası izinlerini onayla.
-8. Drive seçim klasörü boşken testte `uploaded: 0`, `blocked: 0` beklenir; GitHub'a notebook aktarılmaz.
-9. Ardından `installAutomaticSync` fonksiyonunu **bir kez** çalıştır. Bu, yaklaşık **15 dakikada bir** eşitleme tetikleyicisi kurar. İlk izin ve test tamamlanmadan otomatik aktarım etkin değildir.
+7. Aynı alanda **ikinci Script property** ekle: **Property / Özellik:** `COLAB_SHORTCUT_FOLDER_ID` ve **Value / Değer:** özel `GitHub_Yayinlanacak_Notebooklar` Drive klasörünün kimliği (Drive URL'sindeki `folders/` sonrasındaki metin).
+8. Üstteki fonksiyon menüsünden `syncSelectedNotebooks` seç ve **Run / Çalıştır** de. Google izin ekranı gelirse yalnızca bu projenin ihtiyaç duyduğu Drive, GitHub bağlantısı (dış istek) ve komut dosyası izinlerini onayla.
+9. Drive seçim klasörü boşken testte `uploaded: 0`, `blocked: 0` beklenir; GitHub'a notebook aktarılmaz.
+10. Ardından `installAutomaticSync` fonksiyonunu **bir kez** çalıştır. Bu, yaklaşık **15 dakikada bir** eşitleme tetikleyicisi kurar. İlk izin ve test tamamlanmadan otomatik aktarım etkin değildir.
 
 ## C. Sadece yayımlamak istediklerini seç
 
-1. [Colab Notebooks klasörüne](https://drive.google.com/drive/folders/1sX1GZ_ryr1mRRAKyBWLvelufnFB2202u) gir.
+1. Google Drive'daki kendi **Colab Notebooks** klasörüne gir.
 2. Yayımlamak istediğin notebook'a **sağ tık → Düzenle/Organize → Kısayol ekle (Add shortcut)**.
 3. Kısayolu **GitHub_Yayinlanacak_Notebooklar** klasörüne yerleştir.
 4. **Önemli:** Orijinal notebook'u **taşıma**, ayrı kopya yapma. Kısayol, orijinal dosyadaki sonraki değişikliklerin izlenmesini sağlar.
