@@ -1,0 +1,38 @@
+# Credentials and local settings
+.env
+.env.*
+!.env.example
+*credentials*.json
+*secret*.json
+*.pem
+*.key
+*.p12
+
+# Python and notebook caches
+__pycache__/
+.ipynb_checkpoints/
+.pytest_cache/
+.mypy_cache/
+.venv/
+venv/
+*.pyc
+
+# Large, unpublished or locally generated research assets
+*.pth
+*.pt
+*.ckpt
+*.onnx
+*.safetensors
+*.zip
+*.7z
+*.h5
+*.hdf5
+*.tif
+*.tiff
+*.dcm
+datasets/
+raw_data/
+outputs/
+checkpoints/
+wandb/
+runs/
